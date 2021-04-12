@@ -1,4 +1,4 @@
-<header id="header"@if(Route::current()->getName() != 'home') class="header-fixed"@endif>
+<header id="header">
   <div class="container">
 
     <div id="logo" class="pull-left">

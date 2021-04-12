@@ -39,9 +39,18 @@
             <label for="online">online:</label>
             <input type="number" class="form-control" name="online"/>
         </div>
-        <div class="form-group">
+        {{-- <div class="form-group">
             <label for="esemeny_id">esemeny_id:</label>
             <input type="number" class="form-control" name="esemenyek_id"/>
+        </div> --}}
+        <div class="form-group">
+          <label for="esemenyek_id">esemeny_id:</label>
+          <select id="esemenyek_id" name="esemenyek_id" class="form-control" >
+            <option value="">-- Melyik esemeny --</option>
+            @foreach($esemenyek as $esemeny)
+              <option value="{{ Str::slug($esemeny->id) }}">{{$esemeny->esemenynev }}</option>
+            @endforeach
+          </select>
         </div>
           <button type="submit" class="btn btn-primary">Add</button>
       </form>

@@ -22,7 +22,7 @@
               </p>
             </a>
           </li>        
-
+          @can('create-esemenyek') 
           <li class="nav-item menu-closed">
              <a href="{{route('dashboard.esemenyek.index') }}" class="nav-link {{ (strpos(Route::currentRouteName(), 'dashboard.esemenyek') === 0) ? 'active' : '' }}" > 
               <i class="nav-icon fas fa-route"></i>
@@ -31,9 +31,9 @@
               </p>
             </a>
           </li> 
-   
+          @endcan
 
-       
+          @can('create-szekciok') 
           <li class="nav-item menu-closed">
              <a href="{{ route('dashboard.szekciok.index') }}" class="nav-link {{ (request()->is('dashboard/szekciok*')) ? 'active' : '' }}">
               <i class="nav-icon fas fa-file-alt"></i>
@@ -42,7 +42,8 @@
               </p>
             </a>
           </li>
-
+            @endcan
+            @can('create-eloadok') 
           <li class="nav-item menu-closed">
             <a href="{{ route('dashboard.eloadok.index') }}" class="nav-link {{ (request()->is('dashboard/eloadok*')) ? 'active' : '' }}">
              <i class="nav-icon fas fa-file-alt"></i>
@@ -51,7 +52,8 @@
              </p>
            </a>
          </li>
-
+         @endcan
+         @can('create-moderatorok') 
          <li class="nav-item menu-closed">
           <a href="{{ route('dashboard.moderatorok.index') }}" class="nav-link {{ (request()->is('dashboard/moderatorok*')) ? 'active' : '' }}">
            <i class="nav-icon fas fa-file-alt"></i>
@@ -60,8 +62,8 @@
            </p>
          </a>
        </li>
-
-          @can('create-dhtt')   
+       @endcan
+          {{-- @can('create-dhtt')   
           <li class="nav-item has-treeview {{ (request()->is('dashboard/dhtt*')) ? 'menu-open' : '' }}">
             <a href="#" class="nav-link {{ (request()->is('dashboard/dhtt*')) ? 'active' : '' }}">
               <i class="nav-icon fas fa-mountain"></i>
@@ -158,7 +160,7 @@
             <form action="{{ route('logout') }}" id="logout-form" method="POST" style="display: none;">
                     @csrf
                 </form>
-          </li>  
+          </li>   --}}
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

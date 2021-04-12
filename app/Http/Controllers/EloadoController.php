@@ -30,7 +30,9 @@ class EloadoController extends Controller
         'eloadascim' =>$request->input('eloadascim'),
         'email' =>$request->input('email'),
         ]);
+        
         $eloadok->save();
+
         return redirect('/admin/eloadok')->with('status', 'Eloado hozzadva');
     }
     public  function delete ($id)

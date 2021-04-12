@@ -7,28 +7,28 @@
     </div>
 
     <div class="row">
-      {{-- @foreach($prices as $price)
+      {{-- @foreach($prices as $price)--}}
         <div class="col-lg-4">
           <div class="card mb-5 mb-lg-0">
             <div class="card-body">
-              <h5 class="card-title text-muted text-uppercase text-center">{{ $price->name }}</h5>
-              <h6 class="card-price text-center">${{ number_format($price->price) }}</h6>
+              <h5 class="card-title text-muted text-uppercase text-center">nev</h5>
+              <h6 class="card-price text-center">50</h6>
               <hr>
-              <ul class="fa-ul">
+              {{-- <ul class="fa-ul">
                 @foreach($amenities as $amenity)
                   <li @if(!$price->amenities->contains($amenity->id))class="text-muted"@endif>
                     <span class="fa-li"><i class="fa fa-{{ $price->amenities->contains($amenity->id) ? 'check' : 'times' }}"></i></span>{{ $amenity->name }}
                   </li>
                 @endforeach
-              </ul>
+              </ul> --}}
               <hr>
               <div class="text-center">
-                <button type="button" class="btn" data-toggle="modal" data-target="#buy-ticket-modal" data-ticket-type="{{ Str::slug($price->name) }}">Buy Now</button>
+                {{-- <button type="button" class="btn" data-toggle="modal" data-target="#buy-ticket-modal" data-ticket-type="{{ Str::slug($price->name) }}">Buy Now</button> --}}
               </div>
             </div>
           </div>
         </div>
-      @endforeach --}}
+    {{--   @endforeach  --}}
   </div>
 
   <!-- Modal Order Form -->

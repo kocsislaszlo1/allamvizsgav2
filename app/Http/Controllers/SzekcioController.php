@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Szekciok;
+use App\Models\Esemenyek;
 class SzekcioController extends Controller
 {
     public function index(){
@@ -12,10 +13,11 @@ class SzekcioController extends Controller
         return view('dashboard.szekciok.index', compact('szekciok'));
     }
     public function create(){
-        return view('dashboard.szekciok.create');
+        $esemenyek=Esemenyek::all();
+        return view('dashboard.szekciok.create',compact('esemenyek'));
     }
     public function store(Request $request){
-        
+       
         $request->validate([
         'szekcionev' =>'required',
         'idopont' =>'required',
