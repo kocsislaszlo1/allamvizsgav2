@@ -43,7 +43,19 @@
             <label for="email">email:</label>
             <input type="email" class="form-control" name="email"/>
         </div>
-          
+        <div class="form-group">
+          <label for="kivonat">kivonat:</label>
+          <input type="text" class="form-control" name="kivonat"/>
+      </div>
+      <div class="form-group">
+        <label for="szekcio_id">szekciok:</label>
+        <select id="szekcio_id" name="szekcio_id" class="form-control" >
+          <option value="">-- Melyik szekcio --</option>
+          @foreach($szekciok as $szekcio)
+            <option value="{{ Str::slug($szekcio->id) }}">{{$szekcio->szekcionev }}</option>
+          @endforeach
+        </select>
+      </div>
           <button type="submit" class="btn btn-primary">Add</button>
       </form>
   </div>

@@ -15,9 +15,12 @@ class CreateEloadokSzekciokTable extends Migration
     {
         Schema::create('eloadok_szekciok', function (Blueprint $table) {
             $table->unsignedBigInteger('eloado_id');
-            $table->foreign('eloado_id')->references('id')->on('eloadok');
+            $table->datetime('kezdete')->nullable();
+            $table->datetime('vege')->nullable();
+            $table->foreign('eloado_id')->references('id')->on('eloadok')->onDelete('cascade');
            $table->unsignedBigInteger('szekcio_id');
-             $table->foreign('szekcio_id')->references('id')->on('szekciok');
+             $table->foreign('szekcio_id')->references('id')->on('szekciok')->onDelete('cascade');
+
         });
     }
 

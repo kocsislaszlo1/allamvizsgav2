@@ -11,10 +11,10 @@ class Eloadok extends Model
     public $table = 'eloadok';
     public $timestamps = false;
     protected $fillable = [
-        'id', 'nev','fokozat','link','intezmeny','eloadascim','email'
+        'id', 'nev','fokozat','link','intezmeny','eloadascim','email','kivonat'
     ];
-    public function eloado_szekciok (){
+    public function szekciok (){
 
-        return $this->belongsToMany(Szekciok::class);
+        return $this->belongsToMany(Szekciok::class,'eloadok_szekciok','eloado_id','szekcio_id')->withPivot(['kezdete','vege']);
     }
 }

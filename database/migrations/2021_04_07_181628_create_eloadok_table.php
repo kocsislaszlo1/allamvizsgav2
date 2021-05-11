@@ -20,7 +20,7 @@ class CreateEloadokTable extends Migration
             $table->string('intezmeny');
             $table->string('eloadascim');
             $table->string('email');
-
+            $table->string('kivonat');
         });
     }
 

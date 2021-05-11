@@ -15,12 +15,12 @@ class Szekciok extends Model
     protected $fillable = [
      'szekcionev','idopont','link','online','esemenyek_id'
     ];
-    public function esemenyek (){
+    public function esemenyek(){
         return $this->belongsTo(Esemenyek::class);
         
     }
-    public function eloado_szekciok (){
+    public function eloadok(){
 
-        return $this->belongsToMany(Eloadok::class);
+        return $this->belongsToMany(Eloadok::class,'eloadok_szekciok','eloado_id','szekcio_id');
     }
 }

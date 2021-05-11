@@ -2,9 +2,8 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{route('dashboard.dashboard') }}" class="brand-link">
-      <img src="{{asset('img/cseke-logo.png')}}" alt="Cseke Logo" class="brand-image elevation-3"
-           style="opacity: .8" >
-      <span class="brand-text font-weight-light">CsEKE</span>
+     
+      <span class="brand-text font-weight-light">Admin felulet</span>
     </a>
 
     <!-- Sidebar -->
@@ -148,7 +147,7 @@
             </a>
           </li> 
           @endcan           
-
+--}}
           <li class="nav-item menu-closed">
             <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
@@ -160,7 +159,7 @@
             <form action="{{ route('logout') }}" id="logout-form" method="POST" style="display: none;">
                     @csrf
                 </form>
-          </li>   --}}
+          </li>   
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

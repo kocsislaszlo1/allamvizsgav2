@@ -6,7 +6,7 @@
 <div class="col-md-6">
 <div class="card uper">
   <div class="card-header">
-    Edit Student
+    Edit szekcio
   </div>
     <div class="card-body">
       @if ($errors->any())
@@ -26,7 +26,7 @@
         </div>
         <div class="form-group">            
             <label for="idopont">idopont:</label>
-            <input type="text" class="form-control" name="idopont" value="{{$szekcio->idopont}}" />
+            <input type="datetime-local" class="form-control" name="idopont" value="{{$szekcio->idopont}}" />
         </div>
          <div class="form-group">            
             <label for="link">link:</label>
@@ -36,10 +36,15 @@
             <label for="online">online:</label>
             <input type="text" class="form-control" name="online" value="{{$szekcio->online}}" />
         </div>       
-        <div class="form-group">            
-            <label for="esemenyek_id">esmenenyek_id:</label>
-            <input type="text" class="form-control" name="esemenyek_id" value="{{$szekcio->esemenyek_id}}" />
-        </div> 
+        <div class="form-group">
+            <label for="esemenyek_id">esemeny_id:</label>
+            <select id="esemenyek_id" name="esemenyek_id" class="form-control" >
+              <option value="">-- Melyik esemeny --</option>
+              @foreach($esemenyek as $esemeny)
+                <option value="{{ Str::slug($esemeny->id) }}">{{$esemeny->esemenynev }}</option>
+              @endforeach
+            </select>
+          </div>
         <button type="submit" class="btn btn-primary">Update</button>
         </form>
   

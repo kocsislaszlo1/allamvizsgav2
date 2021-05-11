@@ -5,6 +5,9 @@ use App\Http\Controllers\EsemenyController;
 use App\Http\Controllers\SzekcioController;
 use App\Http\Controllers\EloadoController;
 use App\Http\Controllers\ModeratorokController;
+use App\Http\Controllers\RegistController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SzekcioidoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,13 +19,14 @@ use App\Http\Controllers\ModeratorokController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/logout', [LoginController::class, 'logout']);
+Route::get('/register', [RegistController::class, 'index'])->name('register');
+Route::post('/register', [RegistController::class, 'store'])->name('register');
 Route::get('speaker/{speaker}', [HomeController::class, 'view'])->name('speaker');
-Auth::routes();
+
+ 
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/admin', [HomeController::class, 'index2'])->name('dashboard.dashboard');
@@ -41,6 +45,10 @@ Route::get('/admin/szekciok/edit/{id}', [SzekcioController::class, 'edit'])->nam
 Route::post('/admin/szekciok/edit/{id}', [SzekcioController::class, 'update'])->name('dashboard.szekciok.update');
 Route::delete('/admin/szekciok/delete/{id}', [SzekcioController::class, 'delete'])->name('dashboard.szekciok.delete');
 Route::post('/admin/szekciok/store', [SzekcioController::class, 'store'])->name('dashboard.szekciok.store');
+
+
+Route::get('/admin/szekciok/idopont/edit/{id}', [SzekcioidoController::class, 'edit'])->name('dashboard.szekciok.idopont');
+Route::post('/admin/szekciok/idopont/edit/{id}', [SzekcioidoController::class, 'update'])->name('dashboard.szekciok.update');
 //eloadok
 Route::get('/admin/eloadok', [EloadoController::class, 'index'])->name('dashboard.eloadok.index');
 Route::get('/admin/eloadok/create', [EloadoController::class, 'create'])->name('dashboard.eloadok.create');

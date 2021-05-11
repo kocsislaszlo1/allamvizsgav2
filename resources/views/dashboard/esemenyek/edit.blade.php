@@ -30,7 +30,7 @@
         </div>
          <div class="form-group">            
             <label for="datum">Datum:</label>
-            <input type="text" class="form-control" name="datum" value="{{$esemenyek->datum}}" />
+            <input type="date" class="form-control" name="datum" value="{{$esemenyek->datum}}" />
         </div>        
         <button type="submit" class="btn btn-primary">Update</button>
         </form>

@@ -21,7 +21,7 @@
                         <td>link</td>
                         <td>online</td>
                         <td>esemenyek_id</td>
-                        <td colspan="2">muveletek</td>
+                        <td colspan="3">muveletek</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,6 +34,7 @@
                    <td>{{ $szekcio->online }}</td>
                    <td>{{ $szekcio->esemenyek_id }}</td>
                    <td><a href="{{ route('dashboard.szekciok.edit', $szekcio->id) }}" class="btn btn-primary">Edit</a></td>
+                   <td><a href="{{ route('dashboard.szekciok.idopont', $szekcio->id) }}" class="btn btn-primary">Szerkezt</a></td>
                    <td>
                        <form action="{{ route('dashboard.szekciok.delete', $szekcio->id) }}" method="post">
                            @csrf

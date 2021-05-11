@@ -7,5 +7,6 @@
         data-autoplay="true"></a>
 
     <a href="#about" class="about-btn scrollto">About The Event</a>
+    <a href="{{ route('register') }}" class="about-btn scrollto">Regisztracio</a>
   </div>
 </section>

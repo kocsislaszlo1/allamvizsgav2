@@ -20,6 +20,7 @@
                         <td>intezmeny</td>
                         <td>eloadascim</td>
                         <td>email</td>
+                        <td>kivonat</td>
                         <td colspan="2">muveletek</td>
                     </tr>
                 </thead>
@@ -31,7 +32,8 @@
                    <td>{{ $eloado->intezmeny }}</td>
                    <td>{{ $eloado->eloadascim }}</td>
                    <td>{{ $eloado->email }}</td>
-                
+                   <td>{{ $eloado->kivonat }}</td>
+                   
                    <td><a href="{{ route('dashboard.eloadok.edit', $eloado->id) }}" class="btn btn-primary">Edit</a></td>
                    <td>
                        <form action="{{ route('dashboard.eloadok.delete', $eloado->id) }}" method="post">

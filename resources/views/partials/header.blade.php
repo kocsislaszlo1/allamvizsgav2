@@ -21,7 +21,23 @@
         <li><a href="{{ Route::current()->getName() != 'home' ? route('home') : '' }}#gallery">Gallery</a></li>
         <li><a href="{{ Route::current()->getName() != 'home' ? route('home') : '' }}#supporters">Sponsors</a></li>
         <li><a href="{{ Route::current()->getName() != 'home' ? route('home') : '' }}#contact">Contact</a></li>
-        <li class="buy-tickets"><a href="{{ Route::current()->getName() != 'home' ? route('home') : '' }}#buy-tickets">Buy Tickets</a></li>
+        @if( auth()->check() )
+        <li >
+            <a class="nav-link font-weight-bold" href="#">Hi {{ auth()->user()->name }}</a>
+        </li>
+        <li>
+            <a href="{{ route('logout') }}">Log Out</a>
+        </li>
+    @else
+        <li>
+            <a href="/login">Log In</a>
+        </li>
+        <li>
+            <a href="/register">Register</a>
+        </li>
+    @endif
+    
+
       </ul>
     </nav>
   </div>

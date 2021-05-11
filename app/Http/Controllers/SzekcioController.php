@@ -33,18 +33,20 @@ class SzekcioController extends Controller
         'esemenyek_id' =>$request->input('esemenyek_id'),
         ]);
         $szekcio->save();
+        
         return redirect('/admin/szekciok')->with('status', 'Szekcio hozzadva');
     }
     public  function delete ($id)
     {
        $szekcio=Szekciok::find($id);
        $szekcio->delete();
-        return redirect('/admin/szekciok')->with('status', 'Esemeny torolve');
+        return redirect('/admin/szekciok')->with('status', 'Szekcio torolve');
     }
     public function edit($id)
-    {
+    {   
+        $esemenyek=Esemenyek::all();
         $szekcio = Szekciok::find($id);
-        return view('dashboard.szekciok.edit', compact('szekcio', 'id'));
+        return view('dashboard.szekciok.edit', compact('szekcio', 'id','esemenyek'));
     }
     public function update(Request $request, $id)
     {
@@ -63,7 +65,7 @@ class SzekcioController extends Controller
         $szekcio->online = $request->input('online');
         $szekcio->esemenyek_id = $request->input('esemenyek_id');
         $szekcio->save();
-        return redirect('/admin/esemenyek')->with('status', 'Esemeny frisitve');
+        return redirect('/admin/szekciok')->with('status', 'Szekcio frisitve');
     }
 
 }
