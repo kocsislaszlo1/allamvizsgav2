@@ -149,16 +149,13 @@
           @endcan           
 --}}
           <li class="nav-item menu-closed">
-            <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();">
+            <a href="{{ route('logout') }}" class="nav-link" >
               <i class="nav-icon fas fa-sign-out-alt"></i>
               <p>
                 Kilépés
               </p>
             </a>
-            <form action="{{ route('logout') }}" id="logout-form" method="POST" style="display: none;">
-                    @csrf
-                </form>
+          
           </li>   
         </ul>
       </nav>

@@ -6,12 +6,12 @@
     </div>
 
     <div class="row">
-       {{-- @foreach($speakers as $speaker) --}}
+        @foreach($eloadok as $eloado) 
         <div class="col-lg-4 col-md-6">
           <div class="speaker">
-            {{-- <img src="{{ $speaker->photo->getUrl() }}" alt="{{ $speaker->name }}" class="img-fluid"> --}}
+             <img src="img/1.jpg" alt="{{ $eloado->nev }}" class="img-fluid"> 
             <div class="details">
-              <h3><a href="" ></a></h3>
+              <h3><a href="" >{{ $eloado->nev }}</a></h3>
               <p></p>
               <div class="social">
                 {{-- @if($speaker->twitter)
@@ -27,7 +27,7 @@
             </div>
           </div>
         </div>
-      {{-- @endforeach  --}}
+       @endforeach 
     </div>
   </div>
 

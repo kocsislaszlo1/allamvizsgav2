@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Szekciok;
 use App\Models\Eloadok;
-use App\Models\EloadokSzekciok;
-use App\Models\EloadoSzekcio;
 use Symfony\Component\Console\Input\Input;
 
 class RegistController extends Controller

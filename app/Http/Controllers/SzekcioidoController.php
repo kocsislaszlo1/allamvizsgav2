@@ -42,36 +42,33 @@ class SzekcioidoController extends Controller
         public  function delete ($id)
         {
            $szekcio=Szekciok::find($id);
-           $szekcio->delete();
-            return redirect('/admin/szekciok')->with('status', 'Szekcio torolve');
+           $szekcio->eloadok()->where('szekcio_id', $szekcio)->wherePivot('kezdete')->detach(1);
+           //$szekcio->eloadok()->detach($szekcio);
+            return redirect('/admin/szekciok')->with('status', 'idopont torolve');
         }
         public function edit($id)
-        {     $szekciok = Szekciok::find($id);
+        {   $szekciok = Szekciok::find($id);
             $eloadok=Eloadok::whereHas('szekciok',function($q) use ($szekciok){
                 $q->where('eloadok_szekciok.szekcio_id', '=', $szekciok->id);
             }) ->get();
           
-            $szekciok2 = Szekciok::all();
-            return view('dashboard.szekciok.idopont', compact('szekciok', 'id','eloadok','szekciok2'));
+            $eloadok2 = Eloadok::with('szekciok')->get();
+            return view('dashboard.szekciok.idopont', compact('szekciok', 'id','eloadok','eloadok2'));
         }
         public function update(Request $request, $id)
         {
             $request->validate([
-            'szekcionev' =>'required',
-            'idopont' =>'required',
-            'link' =>'required',
-            'online' =>'required',
-            'esemenyek_id' =>'required'
+            'kezdete' =>'required',
+            'vege' =>'required',
             ]);
-            
-            $szekcio = Szekciok::find($id);
-            $szekcio->szekcionev = $request->input('szekcionev');
-            $szekcio->idopont = $request->input('idopont');
-            $szekcio->link = $request->input('link');
-            $szekcio->online = $request->input('online');
-            $szekcio->esemenyek_id = $request->input('esemenyek_id');
-            $szekcio->save();
-            return redirect('/admin/szekciok')->with('status', 'Szekcio frisitve');
+            $szekciok = Szekciok::find($id);
+            //$szekciok->szekcionev = $request->input('szekcionev');
+            $kezdete=$request->input('kezdete');
+            $vege=$request->input('vege');
+           //
+            $szekciok->eloadok()->updateExistingPivot($szekciok,['kezdete'=> $kezdete,'vege'=> $vege,]);
+            //$eloadok->szekciok()->attach($szekciok);
+            return redirect('/admin/szekciok')->with('status', 'ido frisitve');
         }
     
     }
