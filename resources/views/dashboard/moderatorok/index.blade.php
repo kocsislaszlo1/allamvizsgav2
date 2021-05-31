@@ -11,7 +11,7 @@
         <div class="table-responsive">
             <div class="mb-2">
                 <a href="{{ route('dashboard.moderatorok.create') }}" class="btn btn-primary">Create esemeny</a>
-                <table class=" table table-bordered table-striped table-hover datatable datatable-Amenity">
+                <table class=" table table-bordered table-striped table-hover">
                     <thead>
                         <tr>
                             <td>id</td>

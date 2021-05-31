@@ -49,7 +49,8 @@ Route::post('/admin/szekciok/store', [SzekcioController::class, 'store'])->name(
 
 Route::get('/admin/szekciok/idopont/edit/{id}', [SzekcioidoController::class, 'edit'])->name('dashboard.szekciok.eidopont');
 Route::post('/admin/szekciok/idopont/edit/{id}', [SzekcioidoController::class, 'update'])->name('dashboard.szekciok.didopont');
-Route::delete('/admin/szekciok/idopont/delete/{id}', [SzekcioidoController::class, 'delete'])->name('dashboard.szekciok.deidopont');
+Route::post('/admin/szekciok/idopont/edit2/{id}', [SzekcioidoController::class, 'update2'])->name('dashboard.szekciok.didopont2');
+Route::delete('/admin/szekciok/idopont/delete/{eloado_id}', [SzekcioidoController::class, 'delete'])->name('dashboard.szekciok.deidopont');
 //eloadok
 Route::get('/admin/eloadok', [EloadoController::class, 'index'])->name('dashboard.eloadok.index');
 Route::get('/admin/eloadok/create', [EloadoController::class, 'create'])->name('dashboard.eloadok.create');

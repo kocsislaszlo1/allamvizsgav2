@@ -15,15 +15,10 @@ class EsemenyekSeeder extends Seeder
     {
         DB::table('esemenyek')->insert([
         	'id' => '1',
-        	'esemenynev'=> 'esemeny1',
+        	'esemenynev'=> 'SapiEconf',
             'tema'=> 'it',
             'datum'=> '2021-04-29 19:18:44',
         ]);
-        DB::table('esemenyek')->insert([
-        	'id' => '2',
-        	'esemenynev'=> 'esemeny2',
-            'tema'=> 'marketing',
-            'datum'=> '2021-04-30 19:18:44',
-        ]);
+      
     }
 }

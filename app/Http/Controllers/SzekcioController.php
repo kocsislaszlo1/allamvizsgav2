@@ -10,6 +10,7 @@ class SzekcioController extends Controller
     public function index(){
 
         $szekciok=Szekciok::all();
+        
         return view('dashboard.szekciok.index', compact('szekciok'));
     }
     public function create(){

@@ -48,9 +48,9 @@ class EloadoController extends Controller
         return redirect('/admin/eloadok')->with('status', 'Eloado torolve');
     }
     public function edit($id)
-    {
+    {  $szekciok=Szekciok::all();
         $eloadok = Eloadok::find($id);
-        return view('dashboard.eloadok.edit', compact('eloadok', 'id'));
+        return view('dashboard.eloadok.edit', compact('eloadok', 'id','szekciok'));
     }
     public function update(Request $request, $id)
     {
@@ -62,7 +62,7 @@ class EloadoController extends Controller
             'email' =>'required',
             'kivonat' =>'required',
         ]);
-        
+        $szekciok=$request->input('szekcio_id');
         $eloadok = Eloadok::find($id);
         $eloadok->nev = $request->input('nev');
         $eloadok->fokozat = $request->input('fokozat');
@@ -70,7 +70,9 @@ class EloadoController extends Controller
         $eloadok->eloadascim = $request->input('eloadascim');
         $eloadok->email = $request->input('email');
         $eloadok->kivonat = $request->input('kivonat');
+        $eloadok->szekciok()->sync([$szekciok]);
         $eloadok->save();
+        
         return redirect('/admin/eloadok')->with('status', 'Eloado frisitve');
     }
 }

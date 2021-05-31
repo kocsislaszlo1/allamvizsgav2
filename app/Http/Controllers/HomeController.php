@@ -34,7 +34,9 @@ class HomeController extends Controller
         //     ->groupBy('day_number');
          $eloadok = Eloadok::all();
          $szekciok=Szekciok::all();
+   
          $esemenyek=Esemenyek::all();
+
         // $hotels = Hotel::all();
         // $galleries = Gallery::all();
         // $sponsors = Sponsor::all();

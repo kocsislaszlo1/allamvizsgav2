@@ -4,46 +4,79 @@
       <h2>Event Schedule</h2>
       <p>Here is our event schedule</p>
     </div>
-    
-    <ul class="nav nav-tabs" role="tablist">
-
-      @foreach($esemenyek as $esemeny)
-        <li class="nav-item">
-          <a class="nav-link{{ $esemeny->id === 1 ? ' active' : '' }}" href="#day-{{ $esemeny->id }}" role="tab" data-toggle="tab">Day {{ $esemeny->id }}</a>
-        </li>
-      @endforeach
-    </ul> 
-     
+       
     <h3 class="sub-heading">Voluptatem nulla veniam soluta et corrupti consequatur neque eveniet officia. Eius
       necessitatibus voluptatem quis labore perspiciatis quia.</h3>
+      {{-- <table class=" table table-bordered table-striped table-hover datatable datatable">
+        <thead>
+            <tr>
+                <td>Szekcio neve</td>
+                <td>eloado neve</td>
+                <td>link</td>              
+              <td>eloadas kezdete</td>
+              <td>eloadas vege</td>
+            </tr>
+        </thead>
+        <tbody>          
+          @foreach ($szekciok as $szekcio)
+          <tr>
+              <td>{{$szekcio->szekcionev}}</td>
+             
+              <td>
+                <ul> 
+                   @foreach($szekcio->eloadok as $eloado)
+                  <li>
+                    {{$eloado->nev}}
+                    
+                  </li>  
+                  @endforeach
+                </ul>
+              </td><a href="">
+            <td><a href="{{$szekcio->link}}">{{$szekcio->link}}</td>
+                @foreach($szekcio->eloadok as $eloado)
+                    @if($eloado->pivot->kezdete && $eloado->pivot->vege)
+                     <td>{{$eloado->pivot->kezdete}} </td>
+                    <td>{{$eloado->pivot->vege}}</td>
+                    @endif
+                              
+                @endforeach
+            
+        
+           </tr>
+          @endforeach
+        </tbody>
+    </table> --}}
+     <div class="tab-content row justify-content-center">
 
-    <div class="tab-content row justify-content-center">
-      {{-- @foreach($schedules as $key => $day)--}}
-      @foreach($esemenyek as $esemeny)
-        <div role="tabpanel" class="col-lg-9 tab-pane fade{{ $esemeny->id === 1 ? ' show active' : '' }}" id="day-{{$esemeny->id}}">
-
-      @foreach ($eloadok as $eloado) 
+    
+        <div role="tabpanel" class="col-lg-10" id="1">
+      @foreach ($szekciok as $szekcio) 
       
-          <div class="row schedule-item">
-          @foreach ($eloado->szekciok as $szekcio)
-      
+        <p class="szekciocim">{{$szekcio->szekcionev}},szekcio kezdete:{{$szekcio->idopont}}</p>
+        @if($szekcio->online==1)<p class="link">
+        <a href="{{$szekcio->link}}">link:{{$szekcio->link}}</a>
+        </p>
+        @endif
+        @foreach ($szekcio->eloadok as $szekcio) 
+          <div class="row schedule-item">                
               <div class="col-md-1">Kezdete<time>{{$szekcio->pivot->kezdete}}</time></div>
-                <div class="col-md-1">Vege<time>{{$szekcio->pivot->vege}}</time></div> 
-              @endforeach
+               <div class="col-md-1">Vege<time>{{$szekcio->pivot->vege}}</time></div>                                      
               <div class="col-md-10">
-                @if($eloado)
+                {{-- @if($szekcio)
                   <div class="speaker">
-                    <img src="" alt="{{$eloado->nev}}">
-                  </div>
-                @endif
-                <h4>{{ $eloado->eloadascim }} @if($eloado)<span>{{ $eloado->nev }}</span>@endif</h4>
-                {{-- <p>{{ $schedule->subtitle }}</p> --}}
+                    <img src="" alt="{{$szekcio->nev}}">
+                  </div> 
+                @endif--}}
+                <h4>{{ $szekcio->eloadascim }} @if($szekcio)<span>{{$szekcio->fokozat}}.{{ $szekcio->nev }},{{$szekcio->szekcionev}}</span>@endif</h4>
+               <h4>{{$szekcio->intezmeny}}</h4>
+              
               </div>
             </div>
-            @endforeach
-          {{-- @endforeach  --}}
+          @endforeach
+        @endforeach 
+         
         </div>
-       @endforeach 
-    </div>
+     
+    </div> 
   </div>
 </section>

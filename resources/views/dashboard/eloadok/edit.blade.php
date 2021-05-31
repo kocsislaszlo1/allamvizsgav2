@@ -57,6 +57,7 @@
         </select>
       </div>
         <button type="submit" class="btn btn-primary">Update</button>
+        <a href="{{ URL::previous() }}" class="btn btn-warning"> <i class="fas fa-arrow-left"></i> Vissza</a>
         </form>
   
 </div>

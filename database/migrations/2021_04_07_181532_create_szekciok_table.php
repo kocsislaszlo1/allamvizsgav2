@@ -16,7 +16,7 @@ class CreateSzekciokTable extends Migration
         Schema::create('szekciok', function (Blueprint $table) {
             $table->id('id');
             $table->string('szekcionev');
-            $table->datetime('idopont');
+            $table->time('idopont');
             $table->string('link');
             $table->tinyInteger('online');
             $table->unsignedBigInteger('esemenyek_id');

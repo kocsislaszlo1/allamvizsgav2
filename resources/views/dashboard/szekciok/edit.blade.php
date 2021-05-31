@@ -26,7 +26,7 @@
         </div>
         <div class="form-group">            
             <label for="idopont">idopont:</label>
-            <input type="datetime-local" class="form-control" name="idopont" value="{{$szekcio->idopont}}" />
+            <input type="time" class="form-control" name="idopont" value="{{$szekcio->idopont}}" />
         </div>
          <div class="form-group">            
             <label for="link">link:</label>
@@ -46,6 +46,7 @@
             </select>
           </div>
         <button type="submit" class="btn btn-primary">Update</button>
+        <a href="{{ URL::previous() }}" class="btn btn-warning"> <i class="fas fa-arrow-left"></i> Vissza</a>
         </form>
   
 </div>

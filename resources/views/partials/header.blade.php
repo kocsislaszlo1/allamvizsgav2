@@ -5,7 +5,7 @@
       <h1>
         <a href="{{ route('home') }}#intro">
           <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
-          {{ env('APP_NAME', 'The Event') }}
+        SapiEconf
         </a>
       </h1>
     </div>
@@ -19,7 +19,7 @@
         <li><a href="{{ Route::current()->getName() != 'home' ? route('home') : '' }}#venue">Venue</a></li>
         <li><a href="{{ Route::current()->getName() != 'home' ? route('home') : '' }}#hotels">Hotels</a></li>
         <li><a href="{{ Route::current()->getName() != 'home' ? route('home') : '' }}#gallery">Gallery</a></li>
-        <li><a href="{{ Route::current()->getName() != 'home' ? route('home') : '' }}#supporters">Sponsors</a></li>
+
         <li><a href="{{ Route::current()->getName() != 'home' ? route('home') : '' }}#contact">Contact</a></li>
         @if( auth()->check() )
         <li >

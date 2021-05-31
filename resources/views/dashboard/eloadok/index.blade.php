@@ -12,7 +12,7 @@
         <div class="mb-2"> 
             <a href="{{ route('dashboard.eloadok.create') }}" class="btn btn-primary">Create eloado</a>
             
-            <table class=" table table-bordered table-striped table-hover datatable datatable-Amenity">
+            <table class=" table table-bordered table-striped table-hover">
                 <thead>
                     <tr>
                         <td>nev</td>
@@ -33,7 +33,7 @@
                    <td>{{ $eloado->eloadascim }}</td>
                    <td>{{ $eloado->email }}</td>
                    <td>{{ $eloado->kivonat }}</td>
-                   
+            
                    <td><a href="{{ route('dashboard.eloadok.edit', $eloado->id) }}" class="btn btn-primary">Edit</a></td>
                    <td>
                        <form action="{{ route('dashboard.eloadok.delete', $eloado->id) }}" method="post">

@@ -143,5 +143,5 @@ jQuery(document).ready(function( $ ) {
   })
 
 // custom code
-
+console.log(data);
 });

@@ -28,7 +28,7 @@
             <i class="fa fa-key mr-2"></i> Jelszó változtatás
           </a>
           <div class="dropdown-divider"></div>
-          <a href="{{ route('logout') }}">
+          <a href="{{ route('logout')}}">
             <i class="fas fa-sign-out-alt"></i> Kilépés
           </a>
         </div>

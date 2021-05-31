@@ -12,7 +12,7 @@
         <div class="mb-2"> 
             <a href="{{ route('dashboard.szekciok.create') }}" class="btn btn-primary">Create szekciok</a>
             
-            <table class=" table table-bordered table-striped table-hover datatable datatable-Amenity">
+            <table class=" table table-bordered table-striped table-hover ">
                 <thead>
                     <tr>
                         <td>ID</td>
@@ -34,7 +34,9 @@
                    <td>{{ $szekcio->online }}</td>
                    <td>{{ $szekcio->esemenyek_id }}</td>
                    <td><a href="{{ route('dashboard.szekciok.edit', $szekcio->id) }}" class="btn btn-primary">Edit</a></td>
+                  
                    <td><a href="{{ route('dashboard.szekciok.eidopont', $szekcio->id) }}" class="btn btn-primary">Szerkezt</a></td>
+                 
                    <td>
                        <form action="{{ route('dashboard.szekciok.delete', $szekcio->id) }}" method="post">
                            @csrf
