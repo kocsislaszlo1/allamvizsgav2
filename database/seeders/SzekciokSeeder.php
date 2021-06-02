@@ -14,45 +14,45 @@ class SzekciokSeeder extends Seeder
     public function run()
     {
         DB::table('szekciok')->insert([
-        	'id' => '1',
+        	'id' => 1,
         	'szekcionev'=> 'Agriculture and rural economics',
             'idopont'=> '10:00:00',
             'link'=> 'https://meet.google.com/rfn-aktc-baw',
-            'online'=> '1',
-            'esemenyek_id'=> '1',
+            'online'=> 1,
+            'esemenyek_id'=> 1,
         ]);
         DB::table('szekciok')->insert([
-        	'id' => '2',
+        	'id' => 2,
         	'szekcionev'=> 'Business informatics and operational research',
             'idopont'=> '10:00:00',
             'link'=> 'https://meet.google.com/rfn-aktc-baw',
-            'online'=> '1',
-            'esemenyek_id'=> '1',
+            'online'=> 1,
+            'esemenyek_id'=> 1,
         ]);
         DB::table('szekciok')->insert([
-        	'id' => '3',
+        	'id' => 3,
         	'szekcionev'=> 'Capital market, corporate finance and financial',
             'idopont'=> '10:00:00',
             'link'=> 'https://meet.google.com/rfn-aktc-baw',
-            'online'=> '1',
-            'esemenyek_id'=> '1',
+            'online'=> 1,
+            'esemenyek_id'=> 1,
         ]);
 
         DB::table('szekciok')->insert([
-        	'id' => '4',
+        	'id' => 4,
         	'szekcionev'=> 'Current Issues in financial regulation',
             'idopont'=> '10:00:00',
             'link'=> 'https://meet.google.com/rfn-aktc-baw',
-            'online'=> '1',
-            'esemenyek_id'=> '1',
+            'online'=> 1,
+            'esemenyek_id'=> 1,
         ]);
         DB::table('szekciok')->insert([
-        	'id' => '5',
+        	'id' => 5,
         	'szekcionev'=> 'Marketing',
             'idopont'=> '10:00:00',
             'link'=> 'https://meet.google.com/rfn-aktc-baw',
-            'online'=> '1',
-            'esemenyek_id'=> '1',
+            'online'=> 1,
+            'esemenyek_id'=> 1,
         ]);
 
         

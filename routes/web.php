@@ -8,6 +8,7 @@ use App\Http\Controllers\ModeratorokController;
 use App\Http\Controllers\RegistController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SzekcioidoController;
+use App\Http\Controllers\PlenarisController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,14 +20,11 @@ use App\Http\Controllers\SzekcioidoController;
 |
 */
 
- Auth::routes();
+Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [RegistController::class, 'index'])->name('register');
 Route::post('/register', [RegistController::class, 'store'])->name('register');
-Route::get('speaker/{speaker}', [HomeController::class, 'view'])->name('speaker');
-
- 
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/admin', [HomeController::class, 'index2'])->name('dashboard.dashboard');
@@ -46,10 +44,10 @@ Route::post('/admin/szekciok/edit/{id}', [SzekcioController::class, 'update'])->
 Route::delete('/admin/szekciok/delete/{id}', [SzekcioController::class, 'delete'])->name('dashboard.szekciok.delete');
 Route::post('/admin/szekciok/store', [SzekcioController::class, 'store'])->name('dashboard.szekciok.store');
 
-
+//idopont
 Route::get('/admin/szekciok/idopont/edit/{id}', [SzekcioidoController::class, 'edit'])->name('dashboard.szekciok.eidopont');
-Route::post('/admin/szekciok/idopont/edit/{id}', [SzekcioidoController::class, 'update'])->name('dashboard.szekciok.didopont');
-Route::post('/admin/szekciok/idopont/edit2/{id}', [SzekcioidoController::class, 'update2'])->name('dashboard.szekciok.didopont2');
+Route::post('/admin/szekciok/idopont/edit/{id}', [SzekcioidoController::class, 'update'])->name('dashboard.szekciok.eupdate');
+Route::post('/admin/szekciok/idopont/edit2/{id}', [SzekcioidoController::class, 'update2'])->name('dashboard.szekciok.eupdate2');
 Route::delete('/admin/szekciok/idopont/delete/{eloado_id}', [SzekcioidoController::class, 'delete'])->name('dashboard.szekciok.deidopont');
 //eloadok
 Route::get('/admin/eloadok', [EloadoController::class, 'index'])->name('dashboard.eloadok.index');
@@ -58,6 +56,13 @@ Route::get('/admin/eloadok/edit/{id}', [EloadoController::class, 'edit'])->name(
 Route::post('/admin/eloadok/edit/{id}', [EloadoController::class, 'update'])->name('dashboard.eloadok.update');
 Route::delete('/admin/eloadok/delete/{id}', [EloadoController::class, 'delete'])->name('dashboard.eloadok.delete');
 Route::post('/admin/eloadok/store', [EloadoController::class, 'store'])->name('dashboard.eloadok.store');
+//plenaris
+Route::get('/admin/plenaris', [PlenarisController::class, 'index'])->name('dashboard.plenaris.index');
+Route::get('/admin/plenaris/create', [PlenarisController::class, 'create'])->name('dashboard.plenaris.create');
+Route::get('/admin/plenaris/edit/{id}', [PlenarisController::class, 'edit'])->name('dashboard.plenaris.edit');
+Route::post('/admin/plenaris/edit/{id}', [PlenarisController::class, 'update'])->name('dashboard.plenaris.update');
+Route::delete('/admin/plenaris/delete/{id}', [PlenarisController::class, 'delete'])->name('dashboard.plenaris.delete');
+Route::post('/admin/plenaris/store', [PlenarisController::class, 'store'])->name('dashboard.plenaris.store');
 //moderatorok
 Route::get('/admin/moderatorok', [ModeratorokController::class, 'index'])->name('dashboard.moderatorok.index');
 Route::get('/admin/moderatorok/create', [ModeratorokController::class, 'create'])->name('dashboard.moderatorok.create');

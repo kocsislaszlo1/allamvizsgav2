@@ -15,8 +15,7 @@ class EloadoController extends Controller
     }
     public function create(){
         $szekciok=Szekciok::all();
-        $eloadok=Eloadok::all();
-        return view('dashboard.eloadok.create',compact('eloadok','szekciok'));
+        return view('dashboard.eloadok.create',compact('szekciok'));
     }
     public function store(Request $request){
         $szekciok=$request->input('szekcio_id');
@@ -27,6 +26,7 @@ class EloadoController extends Controller
         'eloadascim' =>'required',
         'email' =>'required',
         'kivonat' =>'required',
+        'szekcio_id'=>'required',
         ]);
         $eloadok=new Eloadok([
         'nev' =>$request->input('nev'),
@@ -43,12 +43,12 @@ class EloadoController extends Controller
     }
     public  function delete ($id)
     {
-       $eloadok=Eloadok::find($id);
-       $eloadok->delete();
+        $eloadok=Eloadok::find($id);
+        $eloadok->delete();
         return redirect('/admin/eloadok')->with('status', 'Eloado torolve');
     }
     public function edit($id)
-    {  $szekciok=Szekciok::all();
+    {   $szekciok=Szekciok::all();
         $eloadok = Eloadok::find($id);
         return view('dashboard.eloadok.edit', compact('eloadok', 'id','szekciok'));
     }
@@ -61,6 +61,7 @@ class EloadoController extends Controller
             'eloadascim' =>'required',
             'email' =>'required',
             'kivonat' =>'required',
+            'szekcio_id' =>'required',
         ]);
         $szekciok=$request->input('szekcio_id');
         $eloadok = Eloadok::find($id);

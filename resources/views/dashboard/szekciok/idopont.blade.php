@@ -36,19 +36,19 @@
            @foreach ($eloado->szekciok as $szekcio)
           
          
-           <td> <form action="{{ route('dashboard.szekciok.didopont',$szekcio->pivot->eloado_id) }}" method="post">
+           <td> <form action="{{ route('dashboard.szekciok.eupdate',$szekcio->pivot->eloado_id) }}" method="post">
               @csrf
               @method('POST')  
-              <input type="text" name="kezd" value="{{$szekcio->pivot->kezdete}}" />
+              <input type="time" name="kezd" value="{{$szekcio->pivot->kezdete}}" />
               <input type="hidden"  name="szekcio_id" value="{{$szekcio->id}}" />
                <input type="hidden"  name="eloado_id" value="{{$szekcio->pivot->eloado_id}}" /> 
               <button class="btn btn-danger" type="submit">Frissit</button>
           </form>
            </td>
-           <td> <form action="{{ route('dashboard.szekciok.didopont2',$szekcio->pivot->eloado_id) }}" method="post">
+           <td> <form action="{{ route('dashboard.szekciok.eupdate2',$szekcio->pivot->eloado_id) }}" method="post">
             @csrf
             @method('POST')  
-            <input type="text" name="vege" value="{{$szekcio->pivot->vege}}" />
+            <input type="time" name="vege" value="{{$szekcio->pivot->vege}}" />
             <input type="hidden"  name="szekcio_id" value="{{$szekcio->id}}" />
              <input type="hidden"  name="eloado_id" value="{{$szekcio->pivot->eloado_id}}" /> 
             <button class="btn btn-danger" type="submit">Frissit</button>

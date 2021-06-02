@@ -14,10 +14,10 @@ class EsemenyekSeeder extends Seeder
     public function run()
     {
         DB::table('esemenyek')->insert([
-        	'id' => '1',
-        	'esemenynev'=> 'SapiEconf',
-            'tema'=> 'it',
-            'datum'=> '2021-04-29 19:18:44',
+        	'id' => 1,
+        	'esemenynev'=> '15th International Conference on Economics and Business',
+            'tema'=> 'Economics and Business',
+            'datum'=> '2021-04-29',
         ]);
       
     }

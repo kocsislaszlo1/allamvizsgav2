@@ -62,6 +62,16 @@
          </a>
        </li>
        @endcan
+     @can('create-plenaris') 
+       <li class="nav-item menu-closed">
+        <a href="{{ route('dashboard.plenaris.index') }}" class="nav-link {{ (request()->is('dashboard/plenaris*')) ? 'active' : '' }}">
+         <i class="nav-icon fas fa-file-alt"></i>
+         <p>
+         Plenarisok
+         </p>
+       </a>
+     </li>
+     @endcan
           {{-- @can('create-dhtt')   
           <li class="nav-item has-treeview {{ (request()->is('dashboard/dhtt*')) ? 'menu-open' : '' }}">
             <a href="#" class="nav-link {{ (request()->is('dashboard/dhtt*')) ? 'active' : '' }}">

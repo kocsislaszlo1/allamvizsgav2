@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder
         $this->call(SzekciokSeeder::class);
         $this->call(ModeratorokSeeder::class);
         $this->call(EloadokSeeder::class);
+        $this->call(PlenariseloadokSeeder::class);
     }
 }

@@ -7,6 +7,7 @@ use App\Models\Eloadok;
 use App\Models\Esemenyek;
 use App\Models\Moderatorok;
 use App\Models\Szekciok;
+use App\Models\Plenaris;
 class HomeController extends Controller
 {
     /**
@@ -26,42 +27,15 @@ class HomeController extends Controller
      */
     public function index()
     {   
-        // //$settings = Setting::pluck('value', 'key');
-        // $speakers = Speaker::all();
-        // $schedules = Schedule::with('speaker')
-        //     ->orderBy('start_time', 'asc')
-        //     ->get()
-        //     ->groupBy('day_number');
-         $eloadok = Eloadok::all();
-         $szekciok=Szekciok::all();
-   
-         $esemenyek=Esemenyek::all();
 
-        // $hotels = Hotel::all();
-        // $galleries = Gallery::all();
-        // $sponsors = Sponsor::all();
-        // $faqs = Faq::all();
-        // $prices = Price::with('amenities')->get();
-        // $amenities = Amenity::with('prices')->get();
-
-        return view('home',compact('eloadok','szekciok','esemenyek'));
+        $eloadok = Eloadok::all();
+        $szekciok=Szekciok::all();
+        $esemenyek=Esemenyek::first();
+        $plenarisok=Plenaris::all();
+        return view('home',compact('eloadok','szekciok','esemenyek','plenarisok'));
     }
     public function index2()
     {
-        // //$settings = Setting::pluck('value', 'key');
-        // $speakers = Speaker::all();
-        // $schedules = Schedule::with('speaker')
-        //     ->orderBy('start_time', 'asc')
-        //     ->get()
-        //     ->groupBy('day_number');
-        // $venues = Venue::all();
-        // $hotels = Hotel::all();
-        // $galleries = Gallery::all();
-        // $sponsors = Sponsor::all();
-        // $faqs = Faq::all();
-        // $prices = Price::with('amenities')->get();
-        // $amenities = Amenity::with('prices')->get();
-
         return view('dashboard.dashboard');
     }
    

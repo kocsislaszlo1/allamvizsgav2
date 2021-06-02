@@ -6,28 +6,27 @@
     </div>
 
     <div class="row">
-      
-      {{--  <div class="col-lg-4 col-md-6">
+      @foreach ($plenarisok as $plenaris)
+          
+   
+       <div class="col-lg-4 col-md-6">
           <div class="speaker">
-             <img src="img/1.jpg" alt="{{ $eloado->nev }}" class="img-fluid"> 
+           <div class="hatter">
+             
+           </div>
             <div class="details">
-              <h3><a href="" >{{ $eloado->nev }}</a></h3>
-              <p></p>
+              <h3><a href="" >{{ $plenaris->nev }}</a></h3>
+              <p>{{$plenaris->eloadascim}}</p>
+              <p>eloadas kezdete:{{$plenaris->kezdete}}</p>
+              <p>eloadas vege:{{$plenaris->vege}}</p>
               <div class="social">
-                {{-- @if($speaker->twitter)
-                  <a href="{{ $speaker->twitter }}"><i class="fa fa-twitter"></i></a>
-                @endif
-                @if($speaker->facebook)
-                  <a href="{{ $speaker->facebook }}"><i class="fa fa-facebook"></i></a>
-                @endif
-                @if($speaker->linkedin)
-                  <a href="{{ $speaker->linkedin }}"><i class="fa fa-linkedin"></i></a>
-                @endif 
+                <p>{{$plenaris->email}}</p>
+                <p>{{$plenaris->intezmeny}}</p>
               </div>
             </div>
           </div>
-        </div>--}}
-       
+        </div>
+          @endforeach
      
     </div>
   </div>

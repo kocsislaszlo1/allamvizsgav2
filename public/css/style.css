@@ -708,6 +708,13 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin-bottom: 30px;
 }
 
+#speakers .hatter{
+  vertical-align: middle;
+  border-style: none;
+  max-width: 100%;
+  height: 300px;
+  background-color: #0e1b4d;
+}
 #speakers .speaker .details {
   background: rgba(6, 12, 34, 0.76);
   position: absolute;

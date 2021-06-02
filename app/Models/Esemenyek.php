@@ -17,4 +17,8 @@ class Esemenyek extends Model
     public function szekciok (){
         return $this->hasMany(Szekciok::class);      
     }
+    public function plenaris(){
+        return $this->hasMany(Esemenyek::class);
+        
+    }
 }

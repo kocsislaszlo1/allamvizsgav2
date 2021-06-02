@@ -24,6 +24,7 @@ class RegistController extends Controller
             'eloadascim' =>'required',
             'email' =>'required',
             'kivonat' =>'required',
+            'szekcio_id' =>'required'
             ]);
             $eloadok=new Eloadok([
             'nev' =>$request->input('nev'),
@@ -36,7 +37,7 @@ class RegistController extends Controller
             
             $eloadok->save();
           $eloadok->szekciok()->attach($szekciok);
-            return redirect('/home');
+            return redirect('/register')->with('status', 'Sikeres  regisztracio');
     }
     
 

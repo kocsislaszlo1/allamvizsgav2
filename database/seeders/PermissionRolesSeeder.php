@@ -24,7 +24,9 @@ class PermissionRolesSeeder extends Seeder
         Permission::create(['name' => 'create-moderatorok']);
         Permission::create(['name' => 'create-eloadok']);
         Permission::create(['name' => 'create-jogosultsag']);
+        Permission::create(['name' => 'create-plenaris']);
         Permission::create(['name' => 'view-loggs']);
+
 
         // create roles and assign created permissions
         $moderator = Role::create(['name' => 'moderator']);
@@ -37,7 +39,7 @@ class PermissionRolesSeeder extends Seeder
         $admin->givePermissionTo('create-moderatorok');
         $admin->givePermissionTo('create-szekciok');
         $admin->givePermissionTo('create-eloadok');
-
+        $admin->givePermissionTo('create-plenaris');
         $super_admin = Role::create(['name' => 'super-admin']);
         $super_admin->givePermissionTo(Permission::all());
 

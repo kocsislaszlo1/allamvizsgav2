@@ -67,7 +67,7 @@
                     <img src="" alt="{{$szekcio->nev}}">
                   </div> 
                 @endif--}}
-                <h4>{{ $szekcio->eloadascim }} @if($szekcio)<span>{{$szekcio->fokozat}}.{{ $szekcio->nev }},{{$szekcio->szekcionev}}</span>@endif</h4>
+                <h4>{{ $szekcio->eloadascim }} @if($szekcio)<br><span>{{$szekcio->fokozat}}.{{ $szekcio->nev }},{{$szekcio->szekcionev}}</span>@endif</h4>
                <h4>{{$szekcio->intezmeny}}</h4>
               
               </div>

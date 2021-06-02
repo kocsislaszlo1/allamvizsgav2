@@ -8,17 +8,7 @@ use App\Models\Esemenyek;
 use App\Models\Eloadok;
 class SzekcioidoController extends Controller
 {
-    
-   
-        // public function index(){
-    
-        //     $szekciok=Szekciok::all();
-        //     return view('dashboard.szekciok.index', compact('szekciok'));
-        // }
-        // public function create(){
-        //     $esemenyek=Esemenyek::all();
-        //     return view('dashboard.szekciok.create',compact('esemenyek'));
-        // }
+ 
         public function store(Request $request){
            
             $request->validate([
