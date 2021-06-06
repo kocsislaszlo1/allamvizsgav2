@@ -906,7 +906,12 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #152b79;
   margin-bottom: 0;
 }
-
+.mod{
+  font-size: 18px;
+  font-weight: 600;
+  color: #0e1b4d;
+  margin:0;
+}
 /*--------------------------------------------------------------
 # Venue Section
 --------------------------------------------------------------*/

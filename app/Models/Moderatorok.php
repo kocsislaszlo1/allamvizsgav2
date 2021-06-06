@@ -10,15 +10,15 @@ class Moderatorok extends Model
     use HasFactory;
     public $table = 'moderatorok';
     public $timestamps = false;
-     protected $fillable = [
-          'id','users_id','szekciok_id'
-     ];
-    public function users (){
+    protected $fillable = [
+        'id', 'users_id', 'szekciok_id'
+    ];
+    public function users()
+    {
         return $this->hasMany(User::class);
-        
     }
-    public function szekciok (){
+    public function szekciok()
+    {
         return $this->hasOne(Szekciok::class);
-        
     }
 }

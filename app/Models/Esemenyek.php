@@ -11,14 +11,15 @@ class Esemenyek extends Model
     public $table = 'esemenyek';
     public $timestamps = false;
     protected $fillable = [
-        'esemenynev', 'tema','datum'
+        'esemenynev', 'tema', 'datum'
     ];
 
-    public function szekciok (){
-        return $this->hasMany(Szekciok::class);      
+    public function szekciok()
+    {
+        return $this->hasMany(Szekciok::class);
     }
-    public function plenaris(){
+    public function plenaris()
+    {
         return $this->hasMany(Esemenyek::class);
-        
     }
 }

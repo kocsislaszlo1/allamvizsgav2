@@ -12,17 +12,18 @@
    
         <div role="tabpanel" class="col-lg-10" id="1">
       @foreach ($szekciok as $szekcio) 
-      @foreach($moderatorok as $mod)
-        @if($mod->szekciok_id==$szekcio->id)
-        {{$mod->name}}
-        @endif
-        @endforeach
+     
      
         <p class="szekciocim">{{$szekcio->szekcionev}},szekcio kezdete:{{$szekcio->idopont}}</p>
         @if($szekcio->online==1)<p class="link">
         <a href="{{$szekcio->link}}">link:{{$szekcio->link}}</a>
         </p>
         @endif
+        @foreach($moderatorok as $mod)
+        @if($mod->szekciok_id==$szekcio->id)
+        <p class="mod">moderator:{{$mod->name}}</p>
+        @endif
+        @endforeach
         @foreach ($szekcio->eloadok as $szekcio) 
           <div class="row schedule-item">                
               <div class="col-md-1">Kezdete<time>{{$szekcio->pivot->kezdete}}</time></div>
