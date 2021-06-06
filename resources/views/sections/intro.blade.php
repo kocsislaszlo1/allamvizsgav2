@@ -4,6 +4,6 @@
     <p class="mb-4 pb-0">{{$esemenyek->tema}}</p>
   
     <a href="#about" class="about-btn scrollto">About The Event</a>
-    <a href="{{ route('register') }}" class="about-btn scrollto">Regisztracio</a>
+    <a href="{{ route('regist') }}" class="about-btn scrollto">Regisztracio</a>
   </div>
 </section>

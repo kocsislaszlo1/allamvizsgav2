@@ -39,8 +39,13 @@
           </ul>
       </div><br />
       @endif
+      @if (session('status'))
+        <div class="alert alert-success" role="alert">
+            {{ session('status') }}
+        </div>
+        @endif
     <h2>Register</h2>
-    <form method="POST" action="{{ route('register') }}">
+    <form method="POST" action="{{ route('regist') }}">
         @csrf
         <div class="form-group">
             <label for="nev">nev:</label>

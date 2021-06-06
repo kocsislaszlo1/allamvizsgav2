@@ -11,7 +11,7 @@ class Moderatorok extends Model
     public $table = 'moderatorok';
     public $timestamps = false;
      protected $fillable = [
-          'id','felhasznalo_id','szekcio_id'
+          'id','users_id','szekciok_id'
      ];
     public function users (){
         return $this->hasMany(User::class);

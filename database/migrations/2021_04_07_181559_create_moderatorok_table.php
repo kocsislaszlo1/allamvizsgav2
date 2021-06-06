@@ -14,11 +14,12 @@ class CreateModeratorokTable extends Migration
     public function up()
     {
         Schema::create('moderatorok', function (Blueprint $table) {
-            $table->id('id');
-         $table->unsignedBigInteger('felhasznalo_id');
-         $table->foreign('felhasznalo_id')->references('id')->on('users')->onDelete('cascade');
-        $table->unsignedBigInteger('szekcio_id');
-          $table->foreign('szekcio_id')->references('id')->on('szekciok')->onDelete('cascade');
+        $table->id('id');
+         $table->unsignedBigInteger('users_id');
+         $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
+         $table->unsignedBigInteger('szekciok_id');
+          $table->foreign('szekciok_id')->references('id')->on('szekciok')->onDelete('cascade');
+          
         });
     }
 

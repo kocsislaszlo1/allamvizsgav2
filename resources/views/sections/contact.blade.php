@@ -13,7 +13,7 @@
         <div class="contact-address">
           <i class="ion-ios-location-outline"></i>
           <h3>Address</h3>
-           <address>A108 Adam Street, NY 535022, USA </address> 
+           <address>Szabadság tér, 1. szám Románia, Csíkszereda </address> 
         </div>
       </div>
 
@@ -29,7 +29,7 @@
         <div class="contact-email">
           <i class="ion-ios-email-outline"></i>
           <h3>Email</h3>
-           <p><a href="valami@google.com">valami@google.com</a></p>
+           <p><a href="valami@google.com">kocsislaszlo633@gmail.com</a></p>
         </div>
       </div>
 

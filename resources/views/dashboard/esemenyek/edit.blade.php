@@ -6,7 +6,7 @@
 <div class="col-md-6">
 <div class="card uper">
   <div class="card-header">
-    Edit Student
+    Edit Esemeny
   </div>
     <div class="card-body">
       @if ($errors->any())

@@ -8,6 +8,8 @@ use App\Models\Esemenyek;
 use App\Models\Moderatorok;
 use App\Models\Szekciok;
 use App\Models\Plenaris;
+use App\Models\User;
+use DB;
 class HomeController extends Controller
 {
     /**
@@ -15,10 +17,7 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+
 
     /**
      * Show the application dashboard.
@@ -32,7 +31,12 @@ class HomeController extends Controller
         $szekciok=Szekciok::all();
         $esemenyek=Esemenyek::first();
         $plenarisok=Plenaris::all();
-        return view('home',compact('eloadok','szekciok','esemenyek','plenarisok'));
+        $moderatorok=DB::table('users')
+        ->join('moderatorok','users.id','=','moderatorok.users_id')
+        ->join('szekciok','szekciok.id','=','moderatorok.szekciok_id')
+        ->select('users.name','users.id')->get();   
+       
+        return view('home',compact('eloadok','szekciok','esemenyek','plenarisok','moderatorok',));
     }
     public function index2()
     {

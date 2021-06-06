@@ -34,10 +34,5 @@ class CreateEloadokSzekciokTable extends Migration
         Schema::dropIfExists('eloadok_szekciok');
     }
 }
-// php artisan make:model Esemenyek
-// php artisan make:model Eloadok
-// php artisan make:model Moderatorok
-// php artisan make:model Szekciok
-// php artisan make:model Student
 
 

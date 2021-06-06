@@ -159,7 +159,7 @@
           @endcan           
 --}}
           <li class="nav-item menu-closed">
-            <a href="{{ route('logout') }}" class="nav-link" >
+            <a href="{{ route('home') }}" class="nav-link" >
               <i class="nav-icon fas fa-sign-out-alt"></i>
               <p>
                 Kilépés

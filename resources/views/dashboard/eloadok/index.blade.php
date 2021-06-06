@@ -10,7 +10,7 @@
     @endif
          <div class="table-responsive">
         <div class="mb-2"> 
-            <a href="{{ route('dashboard.eloadok.create') }}" class="btn btn-primary">Create eloado</a>
+            <a href="{{ route('dashboard.eloadok.create') }}" class="btn btn-primary">Create speaker</a>
             
             <table class=" table table-bordered table-striped table-hover">
                 <thead>

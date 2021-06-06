@@ -9,7 +9,8 @@
     <ol>
     	<li>Esemenyek létehozása, módosítása</li>
     	<li>Szekciok, létehozása, módosítása</li>
-    	
+        <li>Eloadok, létehozása, módosítása</li>
+        
     </ol>
 </div>
 

@@ -18,12 +18,11 @@ class PermissionRolesSeeder extends Seeder
         // Reset cached roles and permissions
         app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
 
-               // create permissions
+          // create permissions
         Permission::create(['name' => 'create-esemenyek']);
         Permission::create(['name' => 'create-szekciok']);
         Permission::create(['name' => 'create-moderatorok']);
         Permission::create(['name' => 'create-eloadok']);
-        Permission::create(['name' => 'create-jogosultsag']);
         Permission::create(['name' => 'create-plenaris']);
         Permission::create(['name' => 'view-loggs']);
 
@@ -40,6 +39,7 @@ class PermissionRolesSeeder extends Seeder
         $admin->givePermissionTo('create-szekciok');
         $admin->givePermissionTo('create-eloadok');
         $admin->givePermissionTo('create-plenaris');
+
         $super_admin = Role::create(['name' => 'super-admin']);
         $super_admin->givePermissionTo(Permission::all());
 
@@ -56,5 +56,13 @@ class PermissionRolesSeeder extends Seeder
         $rmoderator->password = bcrypt('valami12345');
         $rmoderator->save();
         $rmoderator->assignRole($moderator);
+        
+        $radmmin           = new User();
+        $radmmin->name     = 'admin';
+        $radmmin->email    = 'admin@admin.com';
+        $radmmin->password = bcrypt('adminadmin');
+        $radmmin->save();
+        $radmmin->assignRole($admin);
+
     }
 }

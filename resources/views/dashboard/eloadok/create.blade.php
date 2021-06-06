@@ -6,7 +6,7 @@
 <div class="col-md-8">
 <div class="card uper">
   <div class="card-header">
-    Add esemeny
+    Add speaker
   </div>
   <div class="card-body">
   @if ($errors->any())

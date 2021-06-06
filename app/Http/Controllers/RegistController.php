@@ -37,7 +37,7 @@ class RegistController extends Controller
             
             $eloadok->save();
           $eloadok->szekciok()->attach($szekciok);
-            return redirect('/register')->with('status', 'Sikeres  regisztracio');
+            return redirect('/regist')->with('status','Sikeres  regisztracio');
     }
     
 

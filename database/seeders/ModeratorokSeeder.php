@@ -15,13 +15,13 @@ class ModeratorokSeeder extends Seeder
     {
         DB::table('moderatorok')->insert([
         	'id' => 1,
-        	'felhasznalo_id'=> 1,
-            'szekcio_id'=> 1,     
+        	'users_id'=> 1,
+            'szekciok_id'=> 1,     
         ]);
         DB::table('moderatorok')->insert([
         	'id' => '2',
-        	'felhasznalo_id'=> 2,
-            'szekcio_id'=> 2,     
+        	'users_id'=> 2,
+            'szekciok_id'=> 2,     
         ]);
     }
 }

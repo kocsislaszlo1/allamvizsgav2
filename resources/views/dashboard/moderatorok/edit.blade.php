@@ -20,18 +20,27 @@
     @endif
     <form method="post" action="{{ route('dashboard.moderatorok.update', $id) }}" >
         @csrf        
-        <div class="form-group">            
-            <label for="id">id:</label>
-            <input type="text" class="form-control" name="id" value="{{$moderatorok->id}}" />
+        <div class="form-group">
+          <label for="felhasznalo_id">felhasznalok:</label>
+          <select id="felhasznalo_id" name="felhasznalo_id" class="form-control" >
+            <option  value="">-- Melyik felhasznalo --</option>
+            @foreach($felhasznalok as $fel)
+              <option value="{{ Str::slug($fel->id) }}">{{$fel->name }}</option>
+            @endforeach
+          </select>
         </div>
-        <div class="form-group">            
-            <label for="felhasznalo_id">felhasznalo_id:</label>
-            <input type="text" class="form-control" name="felhasznalo_id" value="{{$moderatorok->felhasznalo_id}}" />
+        
+      
+        <div class="form-group">
+          <label for="szekcio_id">szekciok:</label>
+          <select id="szekcio_id" name="szekcio_id" class="form-control" >
+            <option value="">-- Melyik szekcio --</option>
+            @foreach($szekciok as $szekcio)
+              <option value="{{ Str::slug($szekcio->id) }}">{{$szekcio->szekcionev }}</option>
+            @endforeach
+          </select>
         </div>
-         <div class="form-group">            
-            <label for="szekcio_id">szekcio_id:</label>
-            <input type="text" class="form-control" name="szekcio_id" value="{{$moderatorok->szekcio_id}}" />
-        </div>        
+        
         <button type="submit" class="btn btn-primary">Update</button>
         <a href="{{ URL::previous() }}" class="btn btn-warning"> <i class="fas fa-arrow-left"></i> Vissza</a>
         </form>

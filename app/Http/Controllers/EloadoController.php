@@ -43,6 +43,7 @@ class EloadoController extends Controller
     }
     public  function delete ($id)
     {
+       
         $eloadok=Eloadok::find($id);
         $eloadok->delete();
         return redirect('/admin/eloadok')->with('status', 'Eloado torolve');

@@ -6,9 +6,10 @@ use App\Http\Controllers\SzekcioController;
 use App\Http\Controllers\EloadoController;
 use App\Http\Controllers\ModeratorokController;
 use App\Http\Controllers\RegistController;
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LogOutController;
 use App\Http\Controllers\SzekcioidoController;
 use App\Http\Controllers\PlenarisController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,15 +20,16 @@ use App\Http\Controllers\PlenarisController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Auth::routes();
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/logout', [LoginController::class, 'logout']);
-Route::get('/register', [RegistController::class, 'index'])->name('register');
-Route::post('/register', [RegistController::class, 'store'])->name('register');
+Route::get('/logout', [LogOutController::class, 'logout'])->name('logout');
+Route::get('/regist', [RegistController::class, 'index'])->name('regist');
+Route::post('/regist', [RegistController::class, 'store'])->name('regist');
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/admin', [HomeController::class, 'index2'])->name('dashboard.dashboard');
+Route::group(['middleware' => ['role:super-admin|admin|moderator']], function () {
+
+Route::get('/admin', [HomeController::class, 'index2'])->name('dashboard.dashboard');  
 //esemeny
 Route::get('/admin/esemenyek', [EsemenyController::class, 'index'])->name('dashboard.esemenyek.index');
 Route::get('/admin/esemenyek/create', [EsemenyController::class, 'create'])->name('dashboard.esemenyek.create');
@@ -70,3 +72,4 @@ Route::get('/admin/moderatorok/edit/{id}', [ModeratorokController::class, 'edit'
 Route::post('/admin/moderatorok/edit/{id}', [ModeratorokController::class, 'update'])->name('dashboard.moderatorok.update');
 Route::delete('/admin/moderatorok/delete/{id}', [ModeratorokController::class, 'delete'])->name('dashboard.moderatorok.delete');
 Route::post('/admin/moderatorok/store', [ModeratorokController::class, 'store'])->name('dashboard.moderatorok.store');
+});

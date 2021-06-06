@@ -26,10 +26,10 @@
         </li>
     @else
         <li>
-            <a href="/login">Log In</a>
+            <a href="{{ route('login') }}">Log In</a>
         </li>
         <li>
-            <a href="/register">Register</a>
+            <a href="{{ route('logout') }}">Log out</a>
         </li>
     @endif
     
