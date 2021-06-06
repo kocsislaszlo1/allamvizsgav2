@@ -45,7 +45,7 @@
          <div class="col-lg-3 col-md-6 footer-contact">
           <h4>Contact Us</h4>
           <p>
-            A108 Adam Street <br> New York, NY 535022<br> United States <br> 
+            Csikszereda <br> Szabadság tér, 1. szám<br> Romania <br> 
             <strong>Phone:</strong> 063123213<br>
             <strong>Email:</strong> valami@email@.com<br>
           </p>
