@@ -34,9 +34,10 @@ class HomeController extends Controller
         $moderatorok=DB::table('users')
         ->join('moderatorok','users.id','=','moderatorok.users_id')
         ->join('szekciok','szekciok.id','=','moderatorok.szekciok_id')
-        ->select('users.name','users.id')->get();   
-       
-        return view('home',compact('eloadok','szekciok','esemenyek','plenarisok','moderatorok',));
+        ->select('users.name','users.id','moderatorok.szekciok_id')->get();   
+        $users=Moderatorok::with('users');
+        
+        return view('home',compact('eloadok','szekciok','esemenyek','plenarisok','moderatorok','users'));
     }
     public function index2()
     {

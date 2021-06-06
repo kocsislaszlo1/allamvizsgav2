@@ -22,8 +22,8 @@
           @csrf
         
           <div class="form-group">
-            <label for="felhasznalo_id">felhasznalok:</label>
-            <select id="felhasznalo_id" name="felhasznalo_id" class="form-control" >
+            <label for="users_id">felhasznalok:</label>
+            <select id="users_id" name="users_id" class="form-control" >
               <option  value="">-- Melyik felhasznalo --</option>
               @foreach($felhasznalok as $fel)
                 <option value="{{ Str::slug($fel->id) }}">{{$fel->name }}</option>

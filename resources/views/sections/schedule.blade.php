@@ -13,10 +13,11 @@
         <div role="tabpanel" class="col-lg-10" id="1">
       @foreach ($szekciok as $szekcio) 
       @foreach($moderatorok as $mod)
-        @if($mod->id==$szekcio->id)
+        @if($mod->szekciok_id==$szekcio->id)
         {{$mod->name}}
         @endif
         @endforeach
+     
         <p class="szekciocim">{{$szekcio->szekcionev}},szekcio kezdete:{{$szekcio->idopont}}</p>
         @if($szekcio->online==1)<p class="link">
         <a href="{{$szekcio->link}}">link:{{$szekcio->link}}</a>

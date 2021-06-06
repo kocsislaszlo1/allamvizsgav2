@@ -26,7 +26,7 @@ public function store(Request $request){
     ]);
     $moderatorok=new Moderatorok([
     'users_id' =>$request->input('users_id'),
-    'szekcio_id' =>$request->input('szekcio_id'),
+    'szekciok_id' =>$request->input('szekcio_id'),
     ]);
     $moderatorok->save();
     return redirect('/admin/moderatorok')->with('status', 'Moderator hozzadva');
@@ -51,7 +51,7 @@ public function update(Request $request, $id)
         ]);
     $moderatorok = Moderatorok::find($id);
     $moderatorok->users_id = $request->input('users_id');
-    $moderatorok->szekcio_id = $request->input('szekcio_id');
+    $moderatorok->szekciok_id = $request->input('szekcio_id');
     $moderatorok->save();
     return redirect('/admin/moderatorok')->with('status', 'Moderator frisitve');
 }
